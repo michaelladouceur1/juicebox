@@ -3,6 +3,8 @@ const PORT = 3000;
 const express = require('express');
 const server = express();
 
+require('dotenv').config()
+
 const bodyParser = express.json()
 server.use(bodyParser)
 
@@ -19,15 +21,6 @@ server.use((req, res, next) => {
 
     next()
 })
-
-
-
-
-
-
-
-
-
 
 const {client} = require('./db')
 client.connect()
